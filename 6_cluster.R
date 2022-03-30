@@ -1,11 +1,12 @@
 
 # Alguns comandos básicos - Análise de Agrupamentos
 
-dados<-read.csv("ONU.csv", header=TRUE)
+dados <- read.csv("ONU.csv", header=TRUE)
 
-rownames(dados)<-dados[,1]
 
-dados<-dados[,2:5]
+rownames(dados) <- dados[,1]
+
+dados <- dados[,2:5]
 
 dist(dados)
 
@@ -20,7 +21,7 @@ plot(hclust(dist(dados), method = 'ward'))
 
 kmeans(dados, 4)
 
-cl <- kmeans(dados, 4)
+cl  <-  kmeans(dados, 4)
 
 plot(dados, col = cl$cluster)
 
